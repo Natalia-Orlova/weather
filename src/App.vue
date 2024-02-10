@@ -32,12 +32,13 @@ onMounted(getWeather)
                   <input v-model="city" type="text" class="search" @keyup.enter="getWeather">
                 </div>
                 <WeatherSummary v-if="!isError" :weatherInfo="weatherInfo" />
-                <div v-else class="error"></div>
-                <div class="error-title">
+                <div v-else class="error">
+                  <div class="error-title">
                   Oops! Something went wrong!
-                </div>
-                <div v-if="weatherInfo?.message" class="error-msg">
+                  </div>
+                  <div v-if="weatherInfo?.message" class="error-msg">
                   {{ capitalizeFirstLetter(weatherInfo?.message) }}
+                  </div>
                 </div>
               </div>
             </section>
